@@ -15,7 +15,7 @@ public class Zombie {
         Zombie zombie = new Zombie();
         
         System.out.println(zombie.growl());
-        System.out.println(zombie.humanseaten());
+        System.out.println("zombie ate"+zombie.humanseaten());
     }
     public String growl(){
         return "Grrrrrrrrrrrrrrgghhhhhhhh";
