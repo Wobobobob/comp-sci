@@ -5,10 +5,10 @@ public class Unit0Exercises {
     public static void main(String[] args) {
         Unit0Exercises obj = new Unit0Exercises();
         System.out.println();
-        
+        System.out.println(obj.diff21(19));
 
         // testing sleepIn() method
-        //System.out.println(obj.sleepIn(false, false));  output: true
+        // System.out.println(obj.sleepIn(false, false)); output: true
         // sleepIn(true, false) -> true
         // sleepIn(false, true) -> true
 
@@ -26,32 +26,28 @@ public class Unit0Exercises {
 
     public boolean sleepIn(boolean weekday, boolean vacation) {
         boolean sleepIn;
-        
-        if (weekday == false || vacation == true){
+
+        if (weekday == false || vacation == true) {
             sleepIn = true;
-        }else{
+        } else {
             sleepIn = false;
         }
         return sleepIn;
     }
 
     public int diff21(int n) {
-        if(n > 21){
-            n = (n -21) * 2;
-        }
-
-        else{
-            n = (n - 21);
+        if (n > 21) {
+            n = Math.abs((21 - n) * 2);
+        } else {
+            n = Math.abs((21 - n));
         }
         return n;
     }
 
-    public double flooringCalculator(int sqft, double pricePerSqft) {
-        if (sqft < 0 || pricePerSqft < 0) 
-        {
+    public double flooringCalculator(int sqft, double pricePerSqft) h{
+        if (sqft < 0 || pricePerSqft < 0) {
             return 0.0;
-        } 
-        else {
+        } else {
             return sqft * pricePerSqft;
         }
     }
