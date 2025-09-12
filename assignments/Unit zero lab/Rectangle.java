@@ -2,8 +2,9 @@ public class Rectangle {
     int length;
     int width;
 
-    public Rectangle(int newLength, int newWidth) {
-
+    public Rectangle(int length, int width) {
+        this.length = length;
+        this.width = width;
     }
 
     public String toString() {
@@ -25,24 +26,34 @@ public class Rectangle {
         return area;
     }
 
-    public int calculatePerimiter() {
+    public int calculatePerimeter() {
         int perimiter = width * 2 + length * 2;
         return perimiter;
     }
 
     public double calculateDiagonal() {
-        double Csquared = Math.pow(width, length);
-        double C = Math.sqrt(Csquared);
-        return C;
+        double csquared = Math.pow(width, 2) + Math.pow(length, 2);
+        double c = Math.sqrt(csquared);
+        return c;
     }
 
-    public void setLength(int newLength){
+    public void setLength(int newLength) {
         width = newLength;
 
     }
-     public void setLength(int newWidth){
+
+    public void setWidth(int newWidth) {
         width = newWidth;
-        
+
     }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
 
 }
