@@ -16,12 +16,12 @@ public class DogTester {
         System.out.println("Updated Dog 3 Owner: " + dog3.getOwnerName());
         System.out.println(dog1.getDogChar());
         System.out.println(dog3.getDogChar());
-        System.out.println(dog2.generateDogTag());
-        System.out.println(dog1.generateDogChar(123)); 
-        System.out.println(dog1.generateDogChar(332)); 
-        System.out.println(dog1.generateDogChar(777)); 
-        System.out.println(dog1.generateDogTag());
-        System.out.println(dog3.generateDogTag());
+        System.out.println(PawsomeUtils.generateDogTag(dog1.getDogID(), dog1.getDogChar()));
+        System.out.println(PawsomeUtils.generateDogChar(123)); 
+        System.out.println(PawsomeUtils.generateDogChar(332)); 
+        System.out.println(PawsomeUtils.generateDogChar(777)); 
+        System.out.println(PawsomeUtils.generateDogTag(dog1.getDogID(), dog1.getDogChar()));
+        System.out.println(PawsomeUtils.generateDogTag(dog3.getDogID(), dog3.getDogChar()));
         System.out.println(dog1.toString());
         System.out.println(dog2.toString());
         System.out.println(dog3.toString());
@@ -31,13 +31,13 @@ public class DogTester {
         dog1.setStillInFacility(false);
         System.out.println(dog1.toString());
         dog1.setStillInFacility(true);
-        System.out.println(Dog.pickup(dog1, "Alice Smith"));
+        System.out.println(PawsomeUtils.pickup(dog1, "Alice Smith"));
         System.out.println(dog1.isStillInFacility());
-        System.out.println(Dog.pickup(dog1, "bobbo"));
-        System.out.println(Dog.pickup(dog2, "king woofers the 3rd"));
+        System.out.println(PawsomeUtils.pickup(dog1, "bobbo"));
+        System.out.println(PawsomeUtils.pickup(dog2, "king woofers the 3rd"));
         System.out.println(dog2.isStillInFacility());
 
-        Dog.checkin(dog1, "bawwuh");
+        PawsomeUtils.checkin(dog1, "bawwuh");
         System.out.println(dog1.getOwnerName());
         System.out.println(dog1.isStillInFacility());
 

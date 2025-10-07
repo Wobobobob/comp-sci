@@ -12,11 +12,10 @@ public class Dog {
         this.age = age;
         this.ownerName = ownerName;
         this.dogID = dogID;
-        this.dogChar = generateDogChar(this.dogID);
+        this.dogChar = PawsomeUtils.generateDogChar(this.dogID);
         this.dogTag = dogTag;
         this.stillInFacility = stillInFacility;
         stillInFacility = true;
-
 
     }
 
@@ -102,32 +101,10 @@ public class Dog {
         }
     }
 
-    public static char generateDogChar(int dogID) {
-        return (char) ('F' + dogID % 10 + (dogID / 10) % 10 + dogID / 100 % 10);
-    }
+    
 
+    
 
-
-    public String generateDogTag() {
-        return "" + this.dogID % 10 + (this.dogID / 10) % 10 + this.dogID / 100 + this.dogChar;
-    }
-
-    public static String pickup(Dog dog, String ownerName) {
-        if (dog.isStillInFacility() && dog.getOwnerName().equals(ownerName)) {
-            dog.setStillInFacility(false);
-            return "Dog picked up successfully.";
-        } else if (!dog.isStillInFacility()) {
-            return "Dog has already been picked up.";
-        } else {
-            return "Owner name does not match. Dog cannot be picked up.";
-        }
-    }
-
-    public  static void checkin(Dog dog, String personName) {
-        dog.setStillInFacility(true);
-        dog.ownerName = personName;
-    }
-
-
+    
 
 }
