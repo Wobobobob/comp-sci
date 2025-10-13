@@ -2,18 +2,18 @@ public class Dog {
     private String name;
     private int age;
     private String ownerName;
-    private int dogID;
+    private int dogId;
     private char dogChar;
     private String dogTag;
     private boolean stillInFacility;
 
-    Dog(String name, int age, String ownerName, int dogID) {
+    Dog(String name, String ownerName, int age, int dogId) {
         this.name = name;
         this.age = age;
         this.ownerName = ownerName;
-        this.dogID = dogID;
-        this.dogChar = PawsomeUtils.generateDogChar(this.dogID);
-        this.dogTag = dogTag;
+        this.dogId = dogId;
+        this.dogChar = PawesomeUtils.generateDogChar(this.dogId);
+        this.dogTag = PawesomeUtils.generateDogTag(this.dogId, this.dogChar);
         this.stillInFacility = stillInFacility;
         stillInFacility = true;
 
@@ -23,7 +23,7 @@ public class Dog {
         name = "Doggo";
         age = 1;
         ownerName = "Jane Doe";
-        dogID = 999;
+        dogId = 999;
         dogChar = 'C';
         dogTag = "+++";
         stillInFacility = true;
@@ -53,12 +53,12 @@ public class Dog {
         this.ownerName = ownerName;
     }
 
-    public int getDogID() {
-        return dogID;
+    public int getDogId() {
+        return dogId;
     }
 
-    public void setDogID(int dogID) {
-        this.dogID = dogID;
+    public void setDogId(int dogId) {
+        this.dogId = dogId;
     }
 
     public char getDogChar() {
@@ -75,6 +75,7 @@ public class Dog {
 
     public void setDogTag(String dogTag) {
         this.dogTag = dogTag;
+        System.out.println(dogTag);
     }
 
     public boolean isStillInFacility() {
@@ -88,12 +89,12 @@ public class Dog {
     @Override
     public String toString() {
         return "Dog name=" + name + ", age=" + age + ", owner name=" + ownerName + ", dogID="
-                + dogID + ", dog character=" + dogChar + ", dogTag=" + dogTag
+                + dogId + ", dog character=" + dogChar + ", dogTag=" + dogTag
                 + ", Still In Facilit?y=" + stillInFacility;
     }
 
     public boolean equals(Dog other) {
-        if (this.dogID == other.dogID && this.name.equals(other.name) && this.age == other.age
+        if (this.dogId == other.dogId && this.name.equals(other.name) && this.age == other.age
                 && this.ownerName.equals(other.ownerName)) {
             return true;
         } else {
@@ -101,10 +102,6 @@ public class Dog {
         }
     }
 
-    
 
-    
-
-    
 
 }
