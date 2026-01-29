@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class Unit3Exercises {
     // Intended: return the average length of the strings in the array.
@@ -17,30 +16,6 @@ public class Unit3Exercises {
         return sum / counted;
     }
 
-    public static void testCalculateStringLengthAverage() {
-        // Test Case - Main Case
-        String[] letters = { "abc", "cde", "efg", "hij" };
-        // expected output: 3.0
-        System.out.println("Expected 3.0: " + Unit3Exercises.calculateAverageStringLength(letters));
-        // Test Case - Edge Case: Null element in array
-        // cannot have a null element
-        letters = new String[] { "abc", "cde", "efg", null, "hij" };
-        // expected output: 3.0
-        System.out.println("Expected 3.0: " + Unit3Exercises.calculateAverageStringLength(letters));
-
-        // Test Case - Edge Case: Null array
-        try {
-            letters = null;
-            System.out.println(
-                    "Expected exception: " + Unit3Exercises.calculateAverageStringLength(letters));
-        } catch (Exception e) {
-            System.out.println(e.toString());
-            System.out
-                    .println("The method threw an exception when the array was null, as intended");
-        }
-
-        System.out.println("finished task one");
-    }
 
     // Intended: produce a new string with the characters of the input reversed.
     public static String reverseString(String str) {
@@ -60,26 +35,7 @@ public class Unit3Exercises {
         return new String(chars);
     }
 
-    public static void testReverseString() {
-        // Test Case - Main Case
-        String testString = "abc";
-        System.out.println("Expected cba: " + Unit3Exercises.reverseString(testString));
-        // Test Case - Edge Case: String with spaces at the end and in the middle
-        testString = " ab c ";
-        System.out.println("Expected ' c ba ': " + Unit3Exercises.reverseString(testString));
-        // Test Case - Edge Case: String with special characters
-        testString = "a1b!c&";
-        System.out.println("Expected '&c!b1a': " + Unit3Exercises.reverseString(testString));
-        // Test Case - Edge Case: Null string
-        try {
-            testString = null;
-            System.out.println("Expected exception: " + Unit3Exercises.reverseString(testString));
-        } catch (Exception e) {
-            System.out.println(e.toString());
-            System.out
-                    .println("The method threw an exception when the string was null, as intended");
-        }
-    }
+
 
     // Intended: return the largest value found in the array.
     public static int findMaxValue(int[] numbers) {
@@ -94,24 +50,7 @@ public class Unit3Exercises {
         return max;
     }
 
-    public static void testFindMaxValue() {
-        int[] test1 = { 1, 2, 3, 4, 5 };
-        System.out.println("Expected 5: " + Unit3Exercises.findMaxValue(test1));
-        int[] test2 = { 0, -2, 6, 7, 69, -5 };
-        System.out.println("Expected 69: " + Unit3Exercises.findMaxValue(test2));
-        int[] test3 = { -18, -22, -4, -6, -12345 };
-        System.out.println("Expected -4: " + Unit3Exercises.findMaxValue(test3));
-        int[] test4 = null;
-        try {
 
-            System.out.println("Expected exception: " + Unit3Exercises.findMaxValue(test4));
-        } catch (Exception e) {
-            System.out.println(e.toString());
-            System.out
-                    .println("The method threw an exception when the string was null, as intended");
-        }
-
-    }
 
     // Intended: check whether the input string reads the same forwards and
     // backwards.
@@ -131,24 +70,7 @@ public class Unit3Exercises {
         return true;
     }
 
-    public static void testIsPalindrome() {
-        String test1 = "racecar";
-        System.out.println("expected true:" + isPalindrome(test1));
-        String test2 = "paveldurov";
-        System.out.println("expected false:" + isPalindrome(test2));
-        String test3 = null;
 
-        try {
-
-            System.out.println("Expected exception: " + Unit3Exercises.isPalindrome(test3));
-        } catch (Exception e) {
-            System.out.println(e.toString());
-            System.out
-                    .println("The method threw an exception when the string was null, as intended");
-        }
-        String test4 = "";
-        System.out.println("expected true: " + isPalindrome(test4));
-    }
 
     // Intended: sum only the even numbers in the array.
     public static int sumEvenNumbers(int[] numbers) {
@@ -162,23 +84,7 @@ public class Unit3Exercises {
         return sum;
     }
 
-    public static void testSumEvenNumbers() {
-        int[] test1 = { 1, 2, 3, 4, 5, 3, 8 };
-        System.out.println("Expected 14:" + sumEvenNumbers(test1));
-        int[] test2 = { -6, -8, -3, -4, -2, -3, -4 };
-        System.out.println("Expected -24:" + sumEvenNumbers(test2));
-        int[] test3 = { -1, 3, -8, 10, 21 };
-        System.out.println("Expected 2:" + sumEvenNumbers(test3));
-        int[] test4 = null;
-        try {
 
-            System.out.println("Expected exception: " + Unit3Exercises.sumEvenNumbers(test4));
-        } catch (Exception e) {
-            System.out.println(e.toString());
-            System.out
-                    .println("The method threw an exception when the string was null, as intended");
-        }
-    }
 
     public static int calculateSumOfSquares(int[] numbers) {
         int sum = 0;
@@ -188,19 +94,7 @@ public class Unit3Exercises {
         return sum;
     }
 
-    public static void testCalculateSumOfSquares() {
-        int test1[] = { 1, 10, 3, 2 };
-        System.out.println("expected 114: " + calculateSumOfSquares(test1));
-        int test2[] = null;
-        try {
 
-            System.out.println("Expected exception: " + Unit3Exercises.calculateSumOfSquares(test2));
-        } catch (Exception e) {
-            System.out.println(e.toString());
-            System.out
-                    .println("The method threw an exception when the string was null, as intended");
-        }
-    }
 
     public static int getNthFibonacci(int n) {
         if (n <= 1) {
@@ -217,22 +111,10 @@ public class Unit3Exercises {
 
     }
 
-    public static void testGetNthFibonacci() {
-        int test1 = 4;
-        System.out.println("expected 3: " + getNthFibonacci(test1));
-        int test2 = -4;
-        try {
-            System.out.println("Expected exception: " + getNthFibonacci(test2));
-        } catch (Exception e) {
-            System.out.println(e.toString());
-            System.out
-                    .println("The method threw an exception when the int was negative, as intended");
-        }
 
-    }
 
     public static void sortArrayDescending(int[] arr) {
-        if(arr == null){
+        if (arr == null) {
             throw new IllegalArgumentException("cannot have a null array");
         }
         for (int i = 0; i < arr.length; i++) {
@@ -246,39 +128,79 @@ public class Unit3Exercises {
         }
     }
 
-    public static void testSortArrayDescending() {
-        int[] test1 = { 5, 8, 3, 2, 6 };
-        sortArrayDescending(test1);
-        System.out.println("Expected: [8, 6, 5, 3, 2]");
-        System.out.println("Actual:   " + Arrays.toString(test1));
-        int[] test2 = {-2, -8, 3,5,123};
-        sortArrayDescending(test2);
-        System.out.println("Expected [123, 5, 3, -2, -8]");
-        System.out.println("Actual: "+ Arrays.toString(test2));
-        int[] test3 = null;
-        try{
-            sortArrayDescending(test3);
-   
-        }catch(Exception e){
-            System.out.println(e.toString());
-            System.out
-                .println("the method threw an exception when array was null as intended");
-        }
-        
-    }
+
 
     public static String findLongestWord(String sentence) {
         String[] words = sentence.split(" ");
         String longestWord = "";
         for (int i = 0; i < words.length; i++) {
-            if (words[i].length() >= longestWord.length()) {
+            if (words[i].length() > longestWord.length()) {
                 longestWord = words[i];
             }
         }
         return longestWord;
     }
 
-    public static void testFindLongestWord(){
-        
+
+
+    public static double calculateInterest(double principal, double rate, int years) {
+        if (principal < 0) {
+            throw new IllegalArgumentException("cannot have a negative principal");
+        } else if (rate < 0) {
+            throw new IllegalArgumentException("cannot have a negative interest rate");
+        } else if (years < 0) {
+            throw new IllegalArgumentException("cannot have a negative number of years");
+        }
+        for (int i = 0; i < years; i++) {
+            principal += principal * (rate / 100);
+        }
+        return principal;
     }
+
+
+
+    public static int parsePositiveInteger(String str) {
+        int number = Integer.parseInt(str);
+        if (number <= 0) {
+            throw new NumberFormatException("cannot have a number less than or equal to zero");
+        }
+        return number;
+    }
+
+
+
+    public static String getArrayElement(String[] arr, int index) {
+        return arr[index];
+    }
+
+    public static double calculateSquareRoot(int number) {
+        if (number < 0) {
+            throw new IllegalArgumentException("cannot square root a negative number");
+        }
+        return Math.sqrt(number);
+    }
+
+    public static int sumArrayElements(int[] array) {
+        if (array == null) {
+            throw new IllegalArgumentException("cannot have a null array");
+        }
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
+
+    }
+
+    public static double calculatePower(double base, int exponent) {
+        if(exponent < 0){
+            throw new IllegalArgumentException("cannot have a negative exponent");
+        }
+    
+        return Math.pow(base, exponent);
+   }
+   
+
+
+
 }

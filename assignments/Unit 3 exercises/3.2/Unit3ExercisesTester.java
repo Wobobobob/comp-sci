@@ -2,13 +2,20 @@
 
 public class Unit3ExercisesTester {
     public static void main(String[] args) {
-        Unit3Exercises.testCalculateStringLengthAverage();
-        Unit3Exercises.testReverseString();
-        Unit3Exercises.testFindMaxValue();
-        Unit3Exercises.testIsPalindrome();
-        Unit3Exercises.testSumEvenNumbers();
-        Unit3Exercises.testCalculateSumOfSquares();
-        Unit3Exercises.testGetNthFibonacci();
-        Unit3Exercises.testSortArrayDescending();
+        Utils.testCalculateStringLengthAverage();
+        Utils.testReverseString();
+        Utils.testFindMaxValue();
+        Utils.testIsPalindrome();
+        Utils.testSumEvenNumbers();
+        Utils.testCalculateSumOfSquares();
+        Utils.testGetNthFibonacci();
+        Utils.testSortArrayDescending();
+        Utils.testFindLongestWord();
+        Utils.testCalculateInterest();
+        Utils.testParsePositiveInteger();
+        Utils.testGetArrayElement();
+        Utils.testCalculateSquareRoot();
+        Utils.testSumArrayElements();
+        Utils.testCalculatePower();
     }
 }
