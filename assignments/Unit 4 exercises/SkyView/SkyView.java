@@ -5,7 +5,7 @@ public class SkyView {
         if (numRows <= 0 || numCols <= 0) {
             throw new IllegalArgumentException("numRows and numCols must be > 0");
         }
-        if (scanned == null || scanned.length < numRows * numCols) {
+        if (scanned == null || scanned.length != numRows * numCols) {
             throw new IllegalArgumentException("scanned array is too small");
         }
 
@@ -43,25 +43,28 @@ public class SkyView {
 
     @Override
     public String toString() {
-        String output = "";
-        for (double[] array : view) {
-            for (double i : array) {
-                output += i + " ";
+        StringBuilder sb = new StringBuilder();
+        for (int r = 0; r < view.length; r++) {
+            for (int c = 0; c < view[r].length; c++) {
+                sb.append(view[r][c]).append(" ");
             }
-            output += "\n";
+            sb.append("\n");
         }
-        return output;
+        return sb.toString();
     }
 
+
+
     public boolean equals(SkyView other) {
-        if (other.view == null || this.view == null){
+
+        if (other.view == null || this.view == null) {
             return false;
-        }   
-        if (this.view.length != other.view.length){
-             return false;
+        }
+        if (this.view.length != other.view.length) {
+            return false;
         }
         for (int i = 0; i < this.view.length; i++) {
-            if (other.view[i].length != this.view[i].length){
+            if (other.view[i].length != this.view[i].length) {
                 return false;
             }
             for (int j = 0; j < this.view[i].length; j++) {
@@ -74,6 +77,10 @@ public class SkyView {
     }
 
     public double getAverage(int startRow, int endRow, int startCol, int endCol) {
+        if (startRow < 0 || startCol < 0 || endRow >= view.length || endCol >= view[0].length
+                || startRow > endRow || startCol > endCol) {
+            throw new IllegalArgumentException("Invalid range");
+        }
         double sum = 0;
         double count = 0;
 

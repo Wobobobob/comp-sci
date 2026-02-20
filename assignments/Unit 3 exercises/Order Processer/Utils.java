@@ -1,4 +1,8 @@
 public class Utils {
+    public static String[] expensiveItems;
+    public static int premiumCount = 0;
+
+    
     public static double getItemPrice(Item item){
         return item.getPrice();
        
@@ -13,17 +17,19 @@ public class Utils {
 
     public static void isExpensive(Item[] items){
         String[] expensiveItemsTemp = new String[items.length];
-        int premiumCount = 0;
+        
         for (Item item : items) {
             if (getItemPrice(item) > 50.0) {
                     expensiveItemsTemp[premiumCount] = getItemName(item);
-                    premiumCount += 1;
-                System.out.println(getItemName(item) + " is a premium item at $" + getItemPrice(item));
+                    premiumCount ++;
+                    System.out.println(getItemName(item) + " is a premium item at $" + getItemPrice(item));
+                    
                 } else {
                     System.out.println(getItemName(item) + " is a regular item at $" + getItemPrice(item));
                 }
         }
-
+        Utils.expensiveItems = expensiveItemsTemp;
+        
     }
 
     public static double calculateSubtotal(Item[] items){
@@ -36,4 +42,28 @@ public class Utils {
         return subtotal;
 
     }
+    public static double calculateTax(double taxRate, double subtotal){
+        double tax;
+        if(subtotal > 0){
+            tax = subtotal * taxRate;
+        }else{
+            tax = 0;
+        }
+        return tax;
+        
+        
+    }
+    public static double calculateTotal(double tax, double subtotal){
+        
+        double total;
+        if (subtotal > 0) {
+            total = subtotal + tax;
+        } else {
+            
+            total = 0;
+        }
+        return total;
+    }
+
+    
 }

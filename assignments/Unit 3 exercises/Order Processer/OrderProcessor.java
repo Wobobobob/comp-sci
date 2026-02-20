@@ -9,27 +9,17 @@ public class OrderProcessor {
             Utils.isExpensive(items);
 
         // Trim premium items to exact size
-        String[] expensiveItems = new String[premiumCount];
-        for (int i = 0; i < premiumCount; i++) {
-            expensiveItems[i] = expensiveItemsTemp[i];
-        }
+       
+        
 
         // Calculate tax and total
-        double tax;
-        double total;
-        if (subtotal > 0) {
-            tax = subtotal * taxRate;
-            total = subtotal + tax;
-        } else {
-            tax = 0;
-            total = 0;
-        }
-
+        double tax = Utils.calculateTax(10, subtotal);
+        double total = Utils.calculateTotal(tax, subtotal);
         System.out.println("Subtotal: $" + subtotal);
         System.out.println("Tax: $" + tax);
         System.out.println("Total: $" + total);
-        System.out.println("Number of premium items: " + premiumCount);
+        System.out.println("Number of premium items: " + Utils.premiumCount);
 
-        return new OrderSummary(total, subtotal, tax, expensiveItems);
+        return new OrderSummary(total, subtotal, tax, Utils.expensiveItems);
     }
 }
