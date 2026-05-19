@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://155xx7s6y6ta"]
+
+[node name="Main" type="Node2D" unique_id=1085041819]
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=1781152810]
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=134158811]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.36739725, 0.3893507, 1)
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1652506845]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=2075320668]
