@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://be8qbmt0fe144"]
 
 [ext_resource type="Texture2D" uid="uid://cxo6ogcdna451" path="res://assets/character/idle/Idle_00.png" id="1_7dp3o"]
+[ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://Scripts/player.gd" id="1_h4iuc"]
 [ext_resource type="Texture2D" uid="uid://jtnmuqrb4d4c" path="res://assets/character/idle/Idle_01.png" id="2_h4iuc"]
 [ext_resource type="Texture2D" uid="uid://clf4v2afwths4" path="res://assets/character/idle/Idle_02.png" id="3_fd4e3"]
 [ext_resource type="Texture2D" uid="uid://b6embdu2t7x1u" path="res://assets/character/idle/Idle_03.png" id="4_qqcod"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://6gxbgq8j576e" path="res://assets/character/idle/Idle_11.png" id="12_p1odr"]
 [ext_resource type="Texture2D" uid="uid://bw0p552qiekb7" path="res://assets/character/idle/Idle_12.png" id="13_0gysh"]
 [ext_resource type="Texture2D" uid="uid://ckaf230nrt6ie" path="res://assets/character/idle/Idle_13.png" id="14_vfarp"]
+[ext_resource type="PackedScene" uid="uid://dtclgpudk4ih3" path="res://Scenes/bullet.tscn" id="16_fd4e3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ueoa1"]
 animations = [{
@@ -71,13 +73,20 @@ height = 185.0
 
 [node name="Player" type="CharacterBody2D" unique_id=951372596]
 scale = Vector2(0.6, 0.6)
+script = ExtResource("1_h4iuc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=814287709]
 sprite_frames = SubResource("SpriteFrames_ueoa1")
 autoplay = "default"
-frame_progress = 0.82615584
+frame_progress = 0.8750383
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1662784445]
 shape = SubResource("CapsuleShape2D_6vcvc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=883428871]
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1740986036]
+position = Vector2(90, 0)
+
+[node name="Bullet" parent="." unique_id=1566791587 instance=ExtResource("16_fd4e3")]
+position = Vector2(90.00001, 0)
